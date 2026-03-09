@@ -5,7 +5,7 @@ use tk::*;
 fn main() -> TkResult<()> {
     let tk = make_tk!()?; //No error handing....
     let root = tk.root();
-    root.set_wm_title("mytks")?; // Again?
+    root.set_wm_title("Temp convertor")?; // Again?
 
     let c = root
         .add_ttk_frame("c" - padding((3, 3, 12, 12)))? // Zed reformatted this
@@ -44,7 +44,7 @@ fn main() -> TkResult<()> {
         let tempc = interp.get_double("tempc");
         match tempc {
             Ok(tempc) => {
-                let tempf = f64::floor( (tempc * 1.8) + 32.0 );
+                let tempf = f64::floor( ((tempc * 1.8) + 32.0) * 10.0 ) / 10.0;
                 interp.set_double("tempf", tempf)
             },
             Err(_) => interp.set("tempf", ""),
