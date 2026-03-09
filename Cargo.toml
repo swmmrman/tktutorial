@@ -4,4 +4,23 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+tcl = "0.1.9"
 tk = "0.1.10"
+
+[[bin]]
+name = "ex1"
+test = false
+bench = false
+path = "src/ex1.rs"
+
+[[bin]]
+name = "ex2"
+test = false
+bench = false
+path = "src/ex2.rs"
+
+[[bin]]
+name = "ex2-orig"
+test = false
+bench = false
+path = "src/ex2-orig.rs"
