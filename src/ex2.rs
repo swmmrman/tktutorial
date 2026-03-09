@@ -47,7 +47,7 @@ fn main() -> TkResult<()> {
                 let tempf = f64::floor( ((tempc * 1.8) + 32.0) * 10.0 ) / 10.0;
                 interp.set_double("tempf", tempf)
             },
-            Err(_) => interp.set("tempf", ""),
+            Err(_) => interp.set("tempf", "NaN"),
         };
         Ok(())
     }
