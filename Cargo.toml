@@ -1,0 +1,7 @@
+[package]
+name = "tktest"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tk = "0.1.10"
