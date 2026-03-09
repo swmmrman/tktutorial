@@ -20,16 +20,16 @@ fn main() -> TkResult<()> {
     c.add_ttk_label("tempf" -textvariable("tempf"))?
         .grid( -column(2) -row(2) -sticky("we"))?;
 
-    c.add_ttk_button( "calc" -text("Convert to °C") -command("calculate"))?
+    c.add_ttk_button( "calc" -text("Convert to °F") -command("calculate"))?
         .grid( -column(3) -row(3) -sticky("w"))?;
 
-    c.add_ttk_label("flbl" -text("°F"))?
+    c.add_ttk_label("flbl" -text("°C"))?
         .grid( -column(3) -row(1) -sticky("w"))?;
 
     c.add_ttk_label("eqlbl" -text("converts to"))?
         .grid( -column(1) -row(2) -sticky("e"))?;
 
-    c.add_ttk_label("clbl" -text("°C"))?
+    c.add_ttk_label("clbl" -text("°F"))?
         .grid( -column(3) -row(2) -sticky("w"))?;
 
     c.winfo_children()?
