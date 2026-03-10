@@ -24,3 +24,13 @@ name = "ex2-orig"
 test = false
 bench = false
 path = "src/ex2-orig.rs"
+
+[[bin]]
+name = "ex3"
+test = false
+bench = false
+
+[[example]]
+name = "configuration_options"
+test = false
+bench = false
