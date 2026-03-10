@@ -8,7 +8,7 @@ tcl = "0.1.9"
 tk = "0.1.10"
 
 [[bin]]
-name = "ex2"
+name = "convertor"
 test = false
 bench = false
 
