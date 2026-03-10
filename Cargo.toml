@@ -11,19 +11,16 @@ tk = "0.1.10"
 name = "ex2"
 test = false
 bench = false
-path = "src/ex2.rs"
 
 [[example]]
 name = "ex1"
 test = false
 bench = false
-path = "src/ex1.rs"
 
 [[example]]
 name = "ex2-orig"
 test = false
 bench = false
-path = "src/ex2-orig.rs"
 
 [[example]]
 name = "configuration_options"
