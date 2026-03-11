@@ -52,9 +52,20 @@ fn main() -> TkResult<()> {
         Ok(())
     }
 
+    #[proc]
+    fn clear() -> TkResult<()> {
+        let interp = tcl_interp!();
+        interp.set("tempf", "");
+        Ok(())
+    }
+
     //Tutorial says safe due to #[proc]
-    unsafe { tk.def_proc("calculate", calculate);}
+    unsafe {
+        tk.def_proc("calculate", calculate);
+        tk.def_proc("clear", clear)
+    }
     root.bind_more( event::key_press(TkKey::Return), "calculate")?;
+    root.bind_more( event::key_press(TkKey::Escape), "clear")?;
 
     Ok(main_loop())
 }
