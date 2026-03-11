@@ -11,7 +11,7 @@ fn main() -> TkResult<()>   {
         .add_ttk_frame( "frame" -width(200) -height(200) -style(&danger) )?
         .grid(())?;
 
-    let f = root.add_ttk_frame( "frame2")?;
+    let f = root.add_ttk_frame( "frame2" -width(100) -height(200))?;
 
 
     // 5 pixels on all sides
