@@ -7,7 +7,7 @@ use tk::cmd::*;
 fn main() -> TkResult<()> {
     let tk = make_tk!()?;
 
-    let l = tk.root().add_ttk_label( "l" -text("Starting...") )?.grid(())?;
+    let l = tk.root().add_ttk_label( "l" -text("Starting...") -width(25) -padding((10,5, 5, 10)))?.grid(())?;
 
     l.bind( event::enter(), tclosure!( tk, || l.configure( -text("Moved mouse inside") )))?;
 
