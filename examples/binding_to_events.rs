@@ -6,6 +6,7 @@ use tk::cmd::*;
 
 fn main() -> TkResult<()> {
     let tk = make_tk!()?;
+    let root = tk.root();
 
     let l = tk.root().add_ttk_label( "l" -text("Starting...") -width(25) -padding((10,5, 5, 10)))?.grid(())?;
 
@@ -23,5 +24,7 @@ fn main() -> TkResult<()> {
         Ok( l.configure( -text( format!( "right button drag to {evt_rootx} {evt_rooty}" )))? )
     }))?;
 
+    root.bind_more( event::key_press(TkKey::Escape), tclosure!(tk, || l.configure( -text("Escape")) ))?;
+    //tk.quit();
     Ok( main_loop() )
 }
