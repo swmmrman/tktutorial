@@ -4,6 +4,7 @@ use tk::cmd::*;
 fn main() -> TkResult<()>   {
     let tk = make_tk!()?;
     let root = tk.root();
+    let f = root.add_ttk_frame( "frame2" -width(100) -height(200))?;
     let danger = tk.new_ttk_style( "Danger.TFrame", None );
     danger.configure( -background("red") -borderwidth(5) -relief("raised") )?;
 
@@ -11,7 +12,6 @@ fn main() -> TkResult<()>   {
         .add_ttk_frame( "frame" -width(200) -height(200) -style(&danger) )?
         .grid(())?;
 
-    let f = root.add_ttk_frame( "frame2" -width(100) -height(200))?;
 
 
     // 5 pixels on all sides
