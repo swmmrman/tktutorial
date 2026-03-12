@@ -72,6 +72,7 @@ fn main() -> TkResult<()> {
         tk.def_proc("quit", quit);
     }
     root.bind_more( event::key_press(TkKey::Return), "calculate")?;
+    root.bind_more( event::key_press(TkKey::KP_Enter), "calculate")?;
     root.bind_more( event::key_press(TkKey::Delete), "clear")?;
     root.bind_more( event::key_press(TkKey::Escape), "quit")?;
 
