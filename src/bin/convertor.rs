@@ -60,21 +60,15 @@ fn main() -> TkResult<()> {
         Ok(())
     }
 
-    #[proc]
-    fn quit() -> TkResult<()>{
-        process::exit(0);
-    }
-
     //Tutorial says safe due to #[proc]
     unsafe {
         tk.def_proc("calculate", calculate);
         tk.def_proc("clear", clear);
-        tk.def_proc("quit", quit);
     }
     root.bind_more( event::key_press(TkKey::Return), "calculate")?;
     root.bind_more( event::key_press(TkKey::KP_Enter), "calculate")?;
     root.bind_more( event::key_press(TkKey::Delete), "clear")?;
-    root.bind_more( event::key_press(TkKey::Escape), "quit")?;
-
+    root.bind_more( event::key_press(TkKey::Escape),
+        tclosure!(tk, || {process::exit(0)}))?;
     Ok(main_loop())
 }
