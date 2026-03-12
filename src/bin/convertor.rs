@@ -1,6 +1,7 @@
 use tcl::*;
 use tk::cmd::*;
 use tk::*;
+use std::process;
 
 fn main() -> TkResult<()> {
     let tk = make_tk!()?; //No error handing....
@@ -59,13 +60,20 @@ fn main() -> TkResult<()> {
         Ok(())
     }
 
+    #[proc]
+    fn quit() -> TkResult<()>{
+        process::exit(0);
+    }
+
     //Tutorial says safe due to #[proc]
     unsafe {
         tk.def_proc("calculate", calculate);
-        tk.def_proc("clear", clear)
+        tk.def_proc("clear", clear);
+        tk.def_proc("quit", quit);
     }
     root.bind_more( event::key_press(TkKey::Return), "calculate")?;
-    root.bind_more( event::key_press(TkKey::Escape), "clear")?;
+    root.bind_more( event::key_press(TkKey::Delete), "clear")?;
+    root.bind_more( event::key_press(TkKey::Escape), "quit")?;
 
     Ok(main_loop())
 }
