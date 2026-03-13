@@ -7,23 +7,3 @@ default-run = "convertor"
 [dependencies]
 tcl = "0.1.9"
 tk = "0.1.10"
-
-[[bin]]
-name = "convertor"
-test = false
-bench = false
-
-[[example]]
-name = "ex1"
-test = false
-bench = false
-
-[[example]]
-name = "ex2-orig"
-test = false
-bench = false
-
-[[example]]
-name = "configuration_options"
-test = false
-bench = false
