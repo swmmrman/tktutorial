@@ -57,6 +57,7 @@ fn main() -> TkResult<()> {
     fn clear() -> TkResult<()> {
         let interp = tcl_interp!();
         interp.set("tempf", "");
+        interp.set("tempc", "");
         Ok(())
     }
 
